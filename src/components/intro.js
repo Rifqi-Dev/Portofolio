@@ -25,6 +25,7 @@ function Intro() {
           <h4>Hi...</h4>
           <h4>Iam Rifqi-dev</h4>
           <h4>Coming Soon</h4>
+          <h4>I'll update this portofolio</h4>
         </div>
       </div>
     </div>
