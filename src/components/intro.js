@@ -20,8 +20,12 @@ function Intro() {
         loaded={particlesLoaded}
         options={template}
       />
-      <div className="w-screen h-[calc(100vh-60px)] flex justify-center items-center text-white">
-        Hi...
+      <div className="w-screen h-[calc(100vh-60px)] flex justify-center items-center flex-col text-white">
+        <div>
+          <h4>Hi...</h4>
+          <h4>Iam Rifqi-dev</h4>
+          <h4>Coming Soon</h4>
+        </div>
       </div>
     </div>
   );
