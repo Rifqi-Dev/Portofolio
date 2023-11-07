@@ -576,10 +576,10 @@
       "speed": 1
     }
   },
-  "pauseOnBlur": true,
-  "pauseOnOutsideViewport": true,
+  "pauseOnBlur": false,
+  "pauseOnOutsideViewport": false,
   "responsive": [],
-  "smooth": false,
+  "smooth": true,
   "style": {},
   "themes": [],
   "zLayers": 100,
