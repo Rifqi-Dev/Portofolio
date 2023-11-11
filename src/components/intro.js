@@ -31,7 +31,8 @@ function Intro() {
         <div>
           <h4>Hi...</h4>
           <h4>Iam Rifqi-dev [Kapuyuax Dev]</h4>
-          <h4>This Still Development</h4>
+          <h4>Iam Fullstack Developer</h4>
+          <h4>This Website Still Development</h4>
           <h4 className="mb-5">
             I'll update this portofolio{" "}
             <span className=" font-extrabold">Later</span>
