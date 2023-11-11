@@ -80,13 +80,13 @@
             "outModes": {
               "default": "destroy"
             },
-            "speed": 2
+            "speed": 5
           },
           "size": {
             "value": 5,
             "animation": {
               "enable": true,
-              "speed": 5,
+              "speed": 10,
               "minimumValue": 1,
               "sync": true,
               "startValue": "min",
