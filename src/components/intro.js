@@ -30,7 +30,7 @@ function Intro() {
       <div className="w-screen h-[calc(100vh-60px)] flex justify-center items-center flex-col text-white">
         <div>
           <h4>Hi...</h4>
-          <h4>Iam Rifqi-dev</h4>
+          <h4>Iam Rifqi-dev [Kapuyuax Dev]</h4>
           <h4>This Still Development</h4>
           <h4 className="mb-5">
             I'll update this portofolio{" "}
