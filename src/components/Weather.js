@@ -41,8 +41,11 @@ function Weather() {
             {location?.city}
           </div>
           <div className="flex">
-            <div className="flex items-center">
-              <img src={getIcon(weather?.weather[0]?.icon)}></img>
+            <div className="flex items-center flex-wrap justify-center md:justify-start">
+              <div className="flex justify-center md:justify-start w-full md:w-fit">
+                <img src={getIcon(weather?.weather[0]?.icon)}></img>
+              </div>
+
               <div className="flex flex-col gap-2">
                 <h3 className=" text-xl">{weather?.weather[0]?.main}</h3>
                 <h3 className=" text-xl">
