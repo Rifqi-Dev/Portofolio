@@ -29,7 +29,7 @@ function Intro() {
         loaded={particlesLoaded}
         options={template}
       />
-      <div className="flex h-[calc(100vh-60px)] md:flex-row flex-col md:justify-center md:gap-40 gap-10">
+      <div className="flex h-[85vh] md:h-[calc(100vh-60px)] md:flex-row flex-col md:justify-center md:gap-40 gap-10">
         <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
           <div className=" outline outline-5 outline-slate-100 rounded-full overflow-hidden bg-black">
             <img
