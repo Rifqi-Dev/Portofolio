@@ -15,7 +15,7 @@ const getIcon = (code) => {
 };
 
 function Weather() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [weather, setWeather] = useState();
 
   useEffect(() => {
@@ -121,6 +121,7 @@ function Weather() {
             </div>
           </div>
         </div>
+        <p className=" text-[6px]">Please Allow Location</p>
       </div>
     );
 }
