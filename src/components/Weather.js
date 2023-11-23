@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDroplet,
   faMapPin,
+  faTachometerAlt,
   faTemperatureHalf,
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
@@ -42,22 +43,29 @@ function Weather() {
           </div>
           <div className="flex">
             <div className="flex items-center flex-wrap justify-center md:justify-start">
-              <div className="flex justify-center md:justify-start w-full md:w-fit">
+              <div className="flex flex-col items-center  w-full md:w-fit mb-2 md:mb-0">
                 <img src={getIcon(weather?.weather[0]?.icon)}></img>
+                <h3 className="text-center mt-[-20px] text-lg">
+                  {weather?.weather[0]?.main}
+                </h3>
               </div>
 
               <div className="flex flex-col gap-2">
-                <h3 className=" text-xl">{weather?.weather[0]?.main}</h3>
                 <h3 className=" text-xl">
                   <FontAwesomeIcon icon={faTemperatureHalf} className="mr-2" />
                   {weather?.main?.temp} &deg;C
                 </h3>
-              </div>
-              <div className="ml-8 flex flex-col gap-2">
                 <h3 className=" text-xl">
                   <FontAwesomeIcon icon={faDroplet} className="mr-2" />
                   {weather?.main?.humidity} %
                 </h3>
+              </div>
+              <div className="ml-8 flex flex-col gap-2">
+                <h3 className=" text-xl">
+                  <FontAwesomeIcon icon={faTachometerAlt} className="mr-2" />
+                  {weather?.main?.pressure} mpa
+                </h3>
+
                 <h3 className=" text-xl">
                   <FontAwesomeIcon icon={faWind} className="mr-2" />
                   {weather?.wind?.speed} km/h
