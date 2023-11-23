@@ -25,7 +25,7 @@ function Weather() {
 
         await WeatherService.getWeather(r?.city).then((r) => {
           setWeather(r);
-          console.log(r);
+          //   console.log(r);
         });
         setLoading(false);
       });
