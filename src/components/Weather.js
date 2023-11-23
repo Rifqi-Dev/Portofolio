@@ -15,14 +15,38 @@ const getIcon = (code) => {
 };
 
 function Weather() {
-  const [location, setLocation] = useState();
   const [loading, setLoading] = useState(false);
   const [weather, setWeather] = useState();
+
   useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          fetchUsingGeolocation(latitude, longitude);
+        },
+        (err) => {
+          fetchUsingIP();
+        }
+      );
+    } else {
+      fetchUsingIP();
+    }
+  }, []);
+
+  async function fetchUsingGeolocation(lat, long) {
+    setLoading(true);
+    await WeatherService.getWeather2(lat, long).then((r) => {
+      setWeather(r);
+      //   console.log(r);
+    });
+    setLoading(false);
+  }
+
+  function fetchUsingIP() {
     const FetchLocation = async () => {
       await GeolocationService.getLocation().then(async (r) => {
-        setLocation(r);
-
         await WeatherService.getWeather(r?.city).then((r) => {
           setWeather(r);
           //   console.log(r);
@@ -32,14 +56,15 @@ function Weather() {
     };
     setLoading(true);
     FetchLocation();
-  }, []);
+  }
+
   if (!loading)
     return (
       <div className=" rounded bg-slate-900 text-white w-fit h-fit p-4">
         <div>
           <div className="text-center text-xl">
             <FontAwesomeIcon icon={faMapPin} className="mr-2" />
-            {location?.city}
+            {weather?.name}
           </div>
           <div className="flex">
             <div className="flex items-center flex-wrap justify-center md:justify-start">
@@ -74,7 +99,6 @@ function Weather() {
             </div>
           </div>
         </div>
-        <p className="text-center text-[7px]">This widget use Ip Geolocation</p>
       </div>
     );
   else
