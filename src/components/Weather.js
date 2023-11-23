@@ -66,9 +66,31 @@ function Weather() {
             </div>
           </div>
         </div>
+        <p className="text-center text-[7px]">This widget use Ip Geolocation</p>
       </div>
     );
-  else return <div className="bg-black text-white">Loading...</div>;
+  else
+    return (
+      <div className=" rounded bg-slate-900 text-white  p-4">
+        <div>
+          <div className="text-center text-xl animate-pulse">
+            <div className="bg-slate-700 h-[28px] w-full rounded-lg"></div>
+          </div>
+          <div className="flex animate-pulse mt-1">
+            <div className="flex items-center flex-wrap justify-center md:justify-start">
+              <div className="flex justify-center md:justify-start w-full md:w-fit">
+                <div className="bg-slate-700 h-[100px] w-[100px] rounded-lg"></div>
+              </div>
+
+              <div className="flex flex-col gap-2 ml-2 md:mt-0 mt-1">
+                <div className="bg-slate-700 h-[28px] w-[233px] rounded-lg"></div>
+                <div className="bg-slate-700 h-[28px] w-[233px] rounded-lg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 }
 
 export default Weather;
