@@ -27,40 +27,29 @@ function Weather() {
           fetchUsingGeolocation(latitude, longitude);
         },
         (err) => {
-          fetchUsingIP();
+          console.log(err);
         }
       );
     } else {
-      fetchUsingIP();
+      console.log("You need to enabled location");
     }
   }, []);
 
   async function fetchUsingGeolocation(lat, long) {
     setLoading(true);
-    await WeatherService.getWeather2(lat, long).then((r) => {
+    await WeatherService.getWeather(lat, long).then((r) => {
       setWeather(r);
       //   console.log(r);
     });
     setLoading(false);
   }
 
-  function fetchUsingIP() {
-    const FetchLocation = async () => {
-      await GeolocationService.getLocation().then(async (r) => {
-        await WeatherService.getWeather(r?.city).then((r) => {
-          setWeather(r);
-          //   console.log(r);
-        });
-        setLoading(false);
-      });
-    };
-    setLoading(true);
-    FetchLocation();
-  }
-
   if (!loading)
     return (
-      <div className=" rounded bg-slate-900 text-white w-fit h-fit p-4">
+      <div
+        className=" rounded bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
+ text-white w-fit h-fit p-4"
+      >
         <div>
           <div className="text-center text-xl">
             <FontAwesomeIcon icon={faMapPin} className="mr-2" />

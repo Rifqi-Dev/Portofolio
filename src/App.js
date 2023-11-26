@@ -12,8 +12,6 @@ function App() {
     <div className="App">
       <p className=" text-[5px] text-white h-[60px]">under development</p>
       <Intro></Intro>
-      {/* <About /> */}
-      <Projects />
     </div>
   );
 }

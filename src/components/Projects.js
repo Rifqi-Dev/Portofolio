@@ -1,10 +1,11 @@
 import React from "react";
 import Weather from "./Weather";
+import Earthquacke from "./Earthquacke";
 
 function Projects() {
   return (
-    <div className="text-white sticky bg-black flex flex-wrap container p-10">
-      <Weather />
+    <div className="text-white  flex flex-wrap container justify-evenly gap-5 p-10">
+      Projects
     </div>
   );
 }

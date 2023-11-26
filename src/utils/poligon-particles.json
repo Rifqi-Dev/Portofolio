@@ -34,7 +34,8 @@
     "events": {
       "onClick": {
         "enable": true,
-        "mode": "push"
+        "mode": "push",
+        "limit": "5"
       },
       "onDiv": {
         "selectors": [],
