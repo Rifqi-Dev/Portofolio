@@ -47,7 +47,7 @@ function Weather() {
   if (!loading)
     return (
       <div
-        className=" rounded bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
+        className=" rounded bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
  text-white w-fit h-fit p-4"
       >
         <div>
@@ -92,7 +92,7 @@ function Weather() {
     );
   else
     return (
-      <div className=" rounded bg-slate-900 text-white  p-4">
+      <div className=" rounded bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 text-white  p-4">
         <div>
           <div className="text-center text-xl animate-pulse">
             <div className="bg-slate-700 h-[28px] w-full rounded-lg"></div>
