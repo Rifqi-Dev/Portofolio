@@ -20,7 +20,7 @@ function Earthquacke() {
   async function fetchData() {
     await EarthquackeService.getData()
       .then((r) => {
-        console.log(r);
+        // console.log(r);
         setData(r);
         setLoading(false);
       })

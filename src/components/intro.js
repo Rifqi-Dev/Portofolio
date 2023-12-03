@@ -31,7 +31,7 @@ function Intro() {
         loaded={particlesLoaded}
         options={template}
       />
-      <div className="flex h-[85vh] md:h-[calc(100vh-60px)] flex-col justify-start md:justify-center">
+      <div className="flex h-full md:h-[calc(100vh-60px)] flex-col justify-start md:justify-center">
         <div className="flex md:flex-row flex-col   md:justify-center md:gap-40 gap-10 w-full">
           <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
             <div
@@ -49,7 +49,7 @@ function Intro() {
           <div className=" flex justify-center items-center flex-col text-white">
             <div className="flex md:items-start items-center flex-col">
               <h2 className=" md:text-[36px] text-[28px] font-poppins tracking-widest">
-                Hello, World!
+                Hello World
               </h2>
               <h2 className=" text-center md:text-start  md:text-[36px] text-[24px]  font-poppins tracking-widest">
                 I'm Rifqi Firlian Pratama
