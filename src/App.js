@@ -1,19 +1,84 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import "./App.css";
 import Intro from "./components/intro";
-import About from "./components/About";
 import TechStack from "./components/TechStack";
+import Resume from "./components/resume/Index";
+import Particles from "react-particles";
+import { loadSlim } from "tsparticles-slim";
+import template from "./utils/poligon-particles.json";
+import { fetchAnalytic } from "./service/analyticService";
 
 function App() {
   useEffect(() => {
-    document.title = "Rifqi Dev";
+    document.title = "Rifqi Dev ";
+
+    const fetchWebAnalytic = async () => {
+      await fetchAnalytic();
+    };
+
+    fetchWebAnalytic();
+  }, []);
+
+  const particlesInit = useCallback(async (engine) => {
+    // console.log(engine);
+
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    // await console.log(container);
   }, []);
   return (
-    <div className="App">
-      <p className=" text-[5px] text-white h-[60px]">under development</p>
-
-      <Intro></Intro>
-      <TechStack />
+    <div className="App text-white ">
+      <Particles
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={template}
+      />
+      <Intro />
+      {/* <Resume /> */}
+      {/* <div className="glowing_stars">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+      </div> */}
     </div>
   );
 }

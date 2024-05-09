@@ -1,0 +1,319 @@
+@-moz-keyframes glow-star {
+  40% {
+    -moz-opacity: 0.3;
+  }
+  90%,
+  100% {
+    -moz-opacity: 1;
+    -moz-transform: scale(1.2);
+  }
+}
+@-webkit-keyframes glow-star {
+  40% {
+    -webkit-opacity: 0.3;
+  }
+  90%,
+  100% {
+    -webkit-opacity: 1;
+    -webkit-transform: scale(1.2);
+  }
+}
+@keyframes glow-star {
+  40% {
+    -webkit-opacity: 0.3;
+    opacity: 0.3;
+  }
+  90%,
+  100% {
+    -webkit-opacity: 1;
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 999999px;
+  }
+}
+
+.stars {
+  background: url(http://salehriaz.com/404Page/img/overlay_stars.svg);
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+.glowing_stars .star {
+  position: absolute;
+  border-radius: 100%;
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+  opacity: 0.3;
+  will-change: opacity;
+}
+
+.glowing_stars .star:nth-child(1) {
+  top: 5%;
+  left: 28%;
+  animation: glow-star 2s infinite ease-in-out alternate 1s;
+}
+
+.glowing_stars .star:nth-child(2) {
+  top: 18%;
+  left: 15%;
+  animation: glow-star 2s infinite ease-in-out alternate 3s;
+}
+
+.glowing_stars .star:nth-child(3) {
+  top: 32%;
+  left: 8%;
+  animation: glow-star 2s infinite ease-in-out alternate 5s;
+}
+
+.glowing_stars .star:nth-child(4) {
+  top: 42%;
+  left: 38%;
+  animation: glow-star 2s infinite ease-in-out alternate 7s;
+}
+
+.glowing_stars .star:nth-child(5) {
+  top: 52%;
+  left: 33%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(6) {
+  top: 12%;
+  left: 72%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(7) {
+  top: 42%;
+  left: 28%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(8) {
+  top: 92%;
+  left: 18%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(9) {
+  top: 52%;
+  left: 85%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(10) {
+  top: 72%;
+  left: 38%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+.glowing_stars .star:nth-child(11) {
+  top: 6%;
+  left: 62%;
+  animation: glow-star 2s infinite ease-in-out alternate 11s;
+}
+
+.glowing_stars .star:nth-child(12) {
+  top: 28%;
+  left: 68%;
+  animation: glow-star 2s infinite ease-in-out alternate 13s;
+}
+
+.glowing_stars .star:nth-child(13) {
+  top: 48%;
+  left: 82%;
+  animation: glow-star 2s infinite ease-in-out alternate 15s;
+}
+
+.glowing_stars .star:nth-child(14) {
+  top: 68%;
+  left: 52%;
+  animation: glow-star 2s infinite ease-in-out alternate 17s;
+}
+
+.glowing_stars .star:nth-child(15) {
+  top: 88%;
+  left: 78%;
+  animation: glow-star 2s infinite ease-in-out alternate 19s;
+}
+
+.glowing_stars .star:nth-child(16) {
+  top: 8%;
+  left: 42%;
+  animation: glow-star 2s infinite ease;
+}
+
+.glowing_stars .star:nth-child(17) {
+  top: 35%;
+  left: 10%;
+  animation: glow-star 2s infinite ease-in-out alternate 21s;
+}
+
+.glowing_stars .star:nth-child(18) {
+  top: 75%;
+  left: 70%;
+  animation: glow-star 2s infinite ease-in-out alternate 23s;
+}
+
+.glowing_stars .star:nth-child(19) {
+  top: 15%;
+  left: 85%;
+  animation: glow-star 2s infinite ease-in-out alternate 25s;
+}
+
+.glowing_stars .star:nth-child(20) {
+  top: 50%;
+  left: 5%;
+  animation: glow-star 2s infinite ease-in-out alternate 27s;
+}
+
+.glowing_stars .star:nth-child(21) {
+  top: 65%;
+  left: 20%;
+  animation: glow-star 2s infinite ease-in-out alternate 29s;
+}
+
+.glowing_stars .star:nth-child(22) {
+  top: 25%;
+  left: 35%;
+  animation: glow-star 2s infinite ease-in-out alternate 31s;
+}
+
+.glowing_stars .star:nth-child(23) {
+  top: 80%;
+  left: 55%;
+  animation: glow-star 2s infinite ease-in-out alternate 33s;
+}
+
+.glowing_stars .star:nth-child(24) {
+  top: 60%;
+  left: 90%;
+  animation: glow-star 2s infinite ease-in-out alternate 35s;
+}
+
+.glowing_stars .star:nth-child(25) {
+  top: 20%;
+  left: 65%;
+  animation: glow-star 2s infinite ease-in-out alternate 37s;
+}
+
+.glowing_stars .star:nth-child(26) {
+  top: 55%;
+  left: 75%;
+  animation: glow-star 2s infinite ease-in-out alternate 39s;
+}
+
+.glowing_stars .star:nth-child(27) {
+  top: 10%;
+  left: 10%;
+  animation: glow-star 2s infinite ease-in-out alternate 41s;
+}
+
+.glowing_stars .star:nth-child(28) {
+  top: 45%;
+  left: 45%;
+  animation: glow-star 2s infinite ease-in-out alternate 43s;
+}
+
+.glowing_stars .star:nth-child(29) {
+  top: 95%;
+  left: 65%;
+  animation: glow-star 2s infinite ease-in-out alternate 45s;
+}
+
+.glowing_stars .star:nth-child(30) {
+  top: 70%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 47s;
+}
+
+.glowing_stars .star:nth-child(31) {
+  top: 30%;
+  left: 80%;
+  animation: glow-star 2s infinite ease-in-out alternate 49s;
+}
+
+.glowing_stars .star:nth-child(32) {
+  top: 5%;
+  left: 55%;
+  animation: glow-star 2s infinite ease-in-out alternate 49s;
+}
+
+.glowing_stars .star:nth-child(33) {
+  top: 25%;
+  left: 15%;
+  animation: glow-star 2s infinite ease-in-out alternate 51s;
+}
+
+.glowing_stars .star:nth-child(34) {
+  top: 40%;
+  left: 75%;
+  animation: glow-star 2s infinite ease-in-out alternate 53s;
+}
+
+.glowing_stars .star:nth-child(35) {
+  top: 70%;
+  left: 5%;
+  animation: glow-star 2s infinite ease-in-out alternate 55s;
+}
+
+.glowing_stars .star:nth-child(36) {
+  top: 85%;
+  left: 40%;
+  animation: glow-star 2s infinite ease-in-out alternate 57s;
+}
+
+.glowing_stars .star:nth-child(37) {
+  top: 15%;
+  left: 95%;
+  animation: glow-star 2s infinite ease-in-out alternate 59s;
+}
+
+.glowing_stars .star:nth-child(38) {
+  top: 50%;
+  left: 30%;
+  animation: glow-star 2s infinite ease-in-out alternate 61s;
+}
+
+.glowing_stars .star:nth-child(39) {
+  top: 80%;
+  left: 60%;
+  animation: glow-star 2s infinite ease-in-out alternate 63s;
+}
+
+.glowing_stars .star:nth-child(40) {
+  top: 35%;
+  left: 20%;
+  animation: glow-star 2s infinite ease-in-out alternate 65s;
+}
+
+@-moz-keyframes spin-moon {
+  100% {
+    -moz-transform: rotate(-360deg);
+    transition: transform 20s;
+  }
+}
+@-webkit-keyframes spin-moon {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transition: transform 20s;
+  }
+}
+@keyframes spin-moon {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    transition: transform 20s;
+  }
+}
+
+.object_moon {
+  position: absolute;
+  top: 12%;
+  left: 25%;
+  z-index: 90;
+  animation: spin-moon 30s infinite linear both;
+}

@@ -14,25 +14,10 @@ import Weather from "./Weather";
 import Earthquacke from "./Earthquacke";
 
 function Intro() {
-  const particlesInit = useCallback(async (engine) => {
-    // console.log(engine);
-
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    // await console.log(container);
-  }, []);
-
   return (
     <div>
-      <Particles
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={template}
-      />
-      <div className="flex h-full md:h-[calc(100vh-60px)] flex-col justify-start md:justify-center">
-        <div className="flex md:flex-row flex-col   md:justify-center md:gap-40 gap-10 w-full">
+      <div className="flex md:h-screen flex-col justify-center items-center mt-[60px]">
+        <div className="flex md:flex-row flex-col  justify-center items-center md:gap-40 gap-10 w-full">
           <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
             <div
               className=" outline outline-5 outline-slate-100 rounded-full overflow-hidden bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
@@ -49,7 +34,10 @@ function Intro() {
           <div className=" flex justify-center items-center flex-col text-white">
             <div className="flex md:items-start items-center flex-col">
               <h2 className=" md:text-[36px] text-[28px] font-poppins tracking-widest">
-                Hello World
+                Hello{" "}
+                <span className="bg-gradient-to-r from-red-400 to-red-800 text-transparent bg-clip-text">
+                  World
+                </span>
               </h2>
               <h2 className=" text-center md:text-start  md:text-[36px] text-[24px]  font-poppins tracking-widest">
                 I'm Rifqi Firlian Pratama
