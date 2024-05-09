@@ -43,7 +43,10 @@ function Intro() {
                 I'm Rifqi Firlian Pratama
               </h2>
               <h3 className=" md:text-[18px] text-[14px] font-poppins">
-                Fullstack Developer
+                <span className="bg-red-800 p-1 rounded-md hover:bg-white hover:text-red-800 transition-all ease-in-out duration-300">
+                  Fullstack
+                </span>{" "}
+                Developer
               </h3>
               <div className="flex gap-4">
                 <NeonContainer
