@@ -6,17 +6,12 @@ import Resume from "./components/resume/Index";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
 import template from "./utils/poligon-particles.json";
-import { fetchAnalytic } from "./service/analyticService";
+import Weather from "./components/Weather";
+import Earthquacke from "./components/Earthquacke";
 
 function App() {
   useEffect(() => {
     document.title = "Rifqi Dev ";
-
-    const fetchWebAnalytic = async () => {
-      await fetchAnalytic();
-    };
-
-    fetchWebAnalytic();
   }, []);
 
   const particlesInit = useCallback(async (engine) => {
@@ -36,6 +31,10 @@ function App() {
         options={template}
       />
       <Intro />
+      <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
+        <Weather />
+        <Earthquacke />
+      </div>
       {/* <Resume /> */}
       {/* <div className="glowing_stars">
         <div className="star"></div>

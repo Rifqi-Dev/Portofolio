@@ -12,11 +12,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import avatar from "../resources/avatar.png";
 import Weather from "./Weather";
 import Earthquacke from "./Earthquacke";
+import VisitorCount from "./VisitorCount";
 
 function Intro() {
   return (
     <div>
-      <div className="flex md:h-screen flex-col justify-center items-center mt-[60px]">
+      <div className="flex md:h-screen flex-col justify-center items-center">
         <div className="flex md:flex-row flex-col  justify-center items-center md:gap-40 gap-10 w-full">
           <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
             <div
@@ -83,9 +84,8 @@ function Intro() {
             </div>
           </div>
         </div>
-        <div className="text-white flex flex-wrap justify-evenly gap-5 p-10 mt-5 md:mt-16">
-          <Weather />
-          <Earthquacke />
+        <div className="container m-10 px-5 md:px-32 mt-24">
+          <VisitorCount />
         </div>
       </div>
     </div>

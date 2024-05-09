@@ -11,6 +11,7 @@ module.exports = {
     gridTemplateColumns: {
       "20/65/15": "20% 65% 15%",
       "15/85": "20% 80%",
+      "20/40/40": "20% 40% 40%",
     },
   },
   plugins: [require("tailwind-scrollbar")],
