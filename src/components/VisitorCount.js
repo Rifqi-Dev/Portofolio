@@ -1,5 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { fetchAnalytic } from "../service/analyticService";
+import { useSpring, animated } from "@react-spring/web";
+
+function Number({ num }) {
+  const { number } = useSpring({
+    from: { number: 0 },
+    number: num,
+    delay: 100,
+    config: { mass: 1, tension: 20, friction: 10 },
+  });
+
+  return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
+}
 
 function VisitorCount() {
   const [loading, setLoading] = useState(true);
@@ -31,12 +43,14 @@ function VisitorCount() {
       </div>
       <div className="text-center">
         <h3 className=" text-xl">Today</h3>
-        <h1 className=" font-bold text-5xl mt-3">{visitData.count}</h1>
+        <h1 className=" font-bold text-5xl mt-3">
+          <Number num={visitData.count} />
+        </h1>
       </div>
       <div className="text-center">
         <h3 className=" text-xl">Last 30 day</h3>
         <h1 className=" font-bold text-5xl mt-3">
-          {visitData.last_thirty_day}
+          <Number num={visitData.last_thirty_day} />
         </h1>
       </div>
     </div>
