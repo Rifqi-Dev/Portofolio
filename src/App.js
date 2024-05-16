@@ -8,6 +8,7 @@ import { loadSlim } from "tsparticles-slim";
 import template from "./utils/poligon-particles.json";
 import Weather from "./components/Weather";
 import Earthquacke from "./components/Earthquacke";
+import WhatIdo from "./components/WhatIdo";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,9 @@ function App() {
         options={template}
       />
       <Intro />
+      <section className="h-screen w-full">
+        <WhatIdo />
+      </section>
       <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
         <Weather />
         <Earthquacke />
