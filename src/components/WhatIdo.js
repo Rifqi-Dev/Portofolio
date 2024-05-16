@@ -22,7 +22,7 @@ function WhatIdo() {
         Skills & Services
       </h3>
       <div
-        data-aos="zoom-in"
+        // data-aos="zoom-in"
         className="card-container p-5 mt-5 md:mt-20 grid md:grid-cols-2 gap-4 md:max-w-3xl w-full"
       >
         <Card
