@@ -10,7 +10,7 @@ Aos.init({ duration: 1500 });
 
 const Card = ({ title, text, icon, techStack }) => {
   return (
-    <div className=" rounded-md bg-red-700 bg-opacity-10 p-5 hover:bg-opacity-20 hover:scale-105 cursor-pointer select-none h-full">
+    <div className=" rounded-md bg-red-700 bg-opacity-10 p-5 hover:bg-opacity-20 hover:scale-105 cursor-pointer select-none h-full  hover:transition-all">
       <div className="card-header font-poppins font-bold text-xl mb-3">
         {title}
       </div>
@@ -31,7 +31,7 @@ const Card = ({ title, text, icon, techStack }) => {
                 key={i}
                 src={url}
                 alt="badge"
-                className=" max-h-[30px] h-full"
+                className=" max-h-[30px] h-full hover:scale-105 hover:transition-all"
               ></img>
             ))}
           </div>

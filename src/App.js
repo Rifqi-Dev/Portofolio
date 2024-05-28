@@ -35,10 +35,10 @@ function App() {
       <section className="w-full">
         <WhatIdo />
       </section>
-      {/* <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
+      <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
         <Weather />
         <Earthquacke />
-      </div> */}
+      </div>
       {/* <Resume /> */}
       {/* <div className="glowing_stars">
         <div className="star"></div>
