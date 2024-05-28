@@ -13,6 +13,7 @@ module.exports = {
       "15/85": "20% 80%",
       "20/40/40": "20% 40% 40%",
       2: "50% 50%",
+      "70/30": "70% 30%",
     },
   },
   plugins: [require("tailwind-scrollbar")],
