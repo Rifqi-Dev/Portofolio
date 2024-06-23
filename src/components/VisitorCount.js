@@ -37,7 +37,7 @@ function VisitorCount() {
   }, []);
 
   return (
-    <div className=" font-poppins grid grid-cols-1 gap-8 md:grid-cols-20/40/40 max-w-[900px] m-auto p-5 bg-[#A20B0B] r bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 rounded-md">
+    <div className=" font-poppins grid grid-cols-1 gap-8 md:grid-cols-20/40/40 max-w-[900px] m-auto p-5 bg-[#A20B0B] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 rounded-md">
       <div className="text-center text-3xl font-bold p-2  md:p-5">
         Visitor Statistic
       </div>

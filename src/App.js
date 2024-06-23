@@ -9,6 +9,8 @@ import template from "./utils/poligon-particles.json";
 import Weather from "./components/Weather";
 import Earthquacke from "./components/Earthquacke";
 import WhatIdo from "./components/WhatIdo";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -32,14 +34,18 @@ function App() {
         options={template}
       />
       <Intro />
-      <section className="w-full">
+      <section className="w-full my-4">
         <WhatIdo />
       </section>
-      <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
+      <section className="w-full mt-8">
+        <Contact />
+      </section>
+      {/* <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
         <Weather />
         <Earthquacke />
-      </div>
+      </div> */}
       {/* <Resume /> */}
+      <Footer />
       {/* <div className="glowing_stars">
         <div className="star"></div>
         <div className="star"></div>
