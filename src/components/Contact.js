@@ -66,7 +66,7 @@ function Contact() {
                 type="text"
                 id="name"
                 placeholder="Input your name"
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white min-w-[300px]"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="from_name"
                 required
               />
@@ -82,7 +82,7 @@ function Contact() {
                 type="email"
                 id="email"
                 placeholder="Input your email"
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white min-w-[300px]"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
                 name="from_email"
                 required
               />
@@ -98,7 +98,7 @@ function Contact() {
             type="text"
             id="subject"
             placeholder="Input email subject"
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white min-w-[300px]"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
             name="subject"
             required
           />
@@ -113,7 +113,7 @@ function Contact() {
             id="subject"
             placeholder="Input your message"
             rows={4}
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white min-w-[300px]"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
             name="subject"
             required
           />
