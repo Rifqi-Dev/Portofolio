@@ -44,7 +44,7 @@ const Card = ({ title, text, icon, techStack }) => {
 function WhatIdo() {
   return (
     <div className="flex flex-col items-center  m-auto">
-      <h3 className="text-center font-poppins text-[36px] font-bold">
+      <h3 className="text-center font-poppins text-[36px] font-bold mt-[60px]">
         Skills & Services
       </h3>
       <div

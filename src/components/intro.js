@@ -25,7 +25,10 @@ function Intro() {
   };
   return (
     <div>
-      <div className="flex md:h-screen flex-col justify-center items-center">
+      <div
+        className="flex md:h-screen flex-col justify-center items-center"
+        id="home"
+      >
         <div className="flex md:flex-row flex-col  justify-center items-center md:gap-40 gap-10 w-full">
           <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
             <div

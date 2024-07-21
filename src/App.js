@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from "react";
 import "./App.css";
 import Intro from "./components/intro";
-import TechStack from "./components/TechStack";
 import Resume from "./components/resume/Index";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
@@ -11,6 +10,8 @@ import Earthquacke from "./components/Earthquacke";
 import WhatIdo from "./components/WhatIdo";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Projects from "./components/Projects";
+import Navbar from "./components/Navbar";
 
 function App() {
   useEffect(() => {
@@ -28,16 +29,20 @@ function App() {
   }, []);
   return (
     <div className="App text-white ">
+      {/* <Navbar /> */}
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}
         options={template}
       />
       <Intro />
-      <section className="w-full my-4">
+      <section className="w-full my-4  md:min-h-screen " id="skills">
         <WhatIdo />
       </section>
-      <section className="w-full mt-8">
+      <section className="w-full my-4 " id="project">
+        <Projects />
+      </section>
+      <section className="w-full mt-8" id="contact">
         <Contact />
       </section>
       {/* <div className="text-white flex flex-wrap justify-evenly gap-5 px-10 py-5">
