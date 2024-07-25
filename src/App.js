@@ -29,7 +29,7 @@ function App() {
   }, []);
   return (
     <div className="App text-white ">
-      {/* <Navbar /> */}
+      <Navbar />
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}

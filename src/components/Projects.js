@@ -16,7 +16,7 @@ function Projects() {
             alt="app-screenshot"
           />
           <a
-            href="https://robotik.pkm.unp.ac.id"
+            href="http://robotik.pkm.unp.ac.id"
             target="__blank"
             className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 cursor-pointer flex gap-2 items-center justify-center text-white text-lg"
           >
