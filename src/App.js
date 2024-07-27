@@ -4,7 +4,7 @@ import Intro from "./components/intro";
 import Resume from "./components/resume/Index";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
-import template from "./utils/poligon-particles.json";
+import template from "./utils/stars-particles.json";
 import Weather from "./components/Weather";
 import Earthquacke from "./components/Earthquacke";
 import WhatIdo from "./components/WhatIdo";

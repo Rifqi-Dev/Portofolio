@@ -50,11 +50,11 @@ function Contact() {
       );
   };
   return (
-    <div className="md:w-[900px] mx-auto p-5">
+    <div className="lg:w-[900px] mx-auto p-5">
       <div className="card bg-[#A20B0B] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 rounded-md  px-10 py-7">
         <h3 className=" font-poppins text-[36px] font-bold mb-4">Contact Me</h3>
         <form ref={emailRef} onSubmit={sendMail}>
-          <div className=" md:grid grid-cols-2 md:gap-3">
+          <div className=" lg:grid grid-cols-2 md:gap-3">
             <div>
               <label
                 class="block uppercase tracking-wide text-white text-sm font-bold mb-2"

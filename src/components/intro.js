@@ -29,32 +29,32 @@ function Intro() {
         className="flex md:h-screen flex-col justify-center items-center"
         id="home"
       >
-        <div className="flex md:flex-row flex-col  justify-center items-center md:gap-40 gap-10 w-full">
+        <div className="flex md:flex-row flex-col  justify-center items-center lg:gap-40 md:gap-5 gap-10 w-full mt-[60px] px-5">
           <div className="flex justify-center md:items-center items-start md:mt-0 mt-10">
             <div
               className=" outline outline-5 outline-slate-100 rounded-full overflow-hidden bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
 "
             >
               <img
-                className="mb-[-10px] md:w-64 w-52"
+                className="mb-[-10px] lg:w-64 w-52"
                 src={avatar}
                 alt="avatar"
               />
             </div>
           </div>
 
-          <div className=" flex justify-center items-center flex-col text-white">
+          <div className=" flex justify-center items-center flex-col text-white z-10">
             <div className="flex md:items-start items-center flex-col">
-              <h2 className=" md:text-[36px] text-[28px] font-poppins tracking-widest">
+              <h2 className=" lg:text-[36px] text-[28px] font-poppins tracking-widest">
                 Hello{" "}
                 <span className="bg-gradient-to-r from-red-400 to-red-800 text-transparent bg-clip-text">
                   World
                 </span>
               </h2>
-              <h2 className=" text-center md:text-start  md:text-[36px] text-[24px]  font-poppins tracking-widest">
+              <h2 className=" text-center md:text-start  lg:text-[36px] text-[24px]  font-poppins tracking-widest">
                 I'm Rifqi Firlian Pratama
               </h2>
-              <h3 className=" md:text-[18px] text-[14px] font-poppins">
+              <h3 className=" lg:text-[18px] text-[14px] font-poppins">
                 <span
                   className="bg-red-800 p-1 rounded-md hover:bg-white hover:text-red-800 transition-all ease-in-out duration-300"
                   onMouseEnter={onEnter}

@@ -10,7 +10,7 @@ Aos.init({ duration: 1500 });
 
 const Card = ({ title, text, icon, techStack }) => {
   return (
-    <div className=" rounded-md bg-red-700 bg-opacity-10 p-5 hover:bg-opacity-20 hover:scale-105 cursor-pointer select-none h-full  hover:transition-all">
+    <div className=" rounded-md bg-red-700 bg-opacity-10 p-5 hover:bg-opacity-20 hover:scale-105 cursor-pointer select-none h-full  hover:transition-all z-10">
       <div className="card-header font-poppins font-bold text-xl mb-3">
         {title}
       </div>
@@ -43,8 +43,8 @@ const Card = ({ title, text, icon, techStack }) => {
 
 function WhatIdo() {
   return (
-    <div className="flex flex-col items-center  m-auto">
-      <h3 className="text-center font-poppins text-[36px] font-bold mt-[60px]">
+    <div className="flex flex-col items-center  m-auto ">
+      <h3 className="text-center font-poppins text-[36px] font-bold mt-[60px] z-10">
         Skills & Services
       </h3>
       <div
