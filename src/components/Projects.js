@@ -4,12 +4,12 @@ import React from "react";
 
 function Projects() {
   return (
-    <div className="relative px-5 md:px-32">
+    <div className="relative px-5 lg:px-32 md:px-9">
       <h3 className="text-center font-poppins text-[36px] font-bold pt-[65px] mb-5">
         My Projects
       </h3>
-      <div className="flex flex-wrap gap-5 justify-arround mt-10 ">
-        <div className="relative w-[300px] rounded-lg overflow-hidden mx-auto md:m-0">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 justify-arround mt-10 ">
+        <div className="relative  rounded-lg overflow-hidden mx-auto md:m-0">
           <img
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=robotik.pkm.unp.ac.id/&dimension=1024x600"
@@ -24,7 +24,7 @@ function Projects() {
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </div>
-        <div className="relative w-[300px] rounded-lg overflow-hidden mx-auto md:m-0">
+        <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=sunshine.onindonesia.id&dimension=1024x600"
@@ -39,7 +39,7 @@ function Projects() {
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </div>
-        <div className="relative w-[300px] rounded-lg overflow-hidden mx-auto md:m-0">
+        <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=onmarket.id&dimension=1024x600"
@@ -54,7 +54,7 @@ function Projects() {
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </div>
-        <div className="relative w-[300px] rounded-lg overflow-hidden mx-auto md:m-0">
+        <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=seller.onmarket.id&dimension=1024x600"
@@ -69,7 +69,7 @@ function Projects() {
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </div>
-        <div className="relative w-[300px] rounded-lg overflow-hidden mx-auto md:m-0">
+        <div className="relative    rounded-lg overflow-hidden mx-auto md:m-0">
           <img
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=admin.onmarket.id&dimension=1024x600"
