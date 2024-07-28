@@ -17,6 +17,7 @@ const Card = ({ title, text, icon, techStack }) => {
       <div className="card-body font-poppins font-light text-sm grid grid-cols-70/30 w-100">
         <p>{text}</p>
         <img
+          loading="lazy"
           src={icon}
           alt={title}
           className="h-[80px] fill-white m-auto"
@@ -28,6 +29,7 @@ const Card = ({ title, text, icon, techStack }) => {
           <div className="flex gap-1 m-1 flex-wrap items-center">
             {techStack.map((url, i) => (
               <img
+                loading="lazy"
                 key={i}
                 src={url}
                 alt="badge"

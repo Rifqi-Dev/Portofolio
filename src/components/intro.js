@@ -39,6 +39,7 @@ function Intro() {
                 className="mb-[-10px] lg:w-64 w-52"
                 src={avatar}
                 alt="avatar"
+                loading="lazy"
               />
             </div>
           </div>
