@@ -11,6 +11,7 @@ function Projects() {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 justify-arround mt-10 ">
         <div className="relative  rounded-lg overflow-hidden mx-auto md:m-0">
           <img
+            loading="lazy"
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=robotik.pkm.unp.ac.id/&dimension=1024x600"
             alt="app-screenshot"
@@ -26,6 +27,7 @@ function Projects() {
         </div>
         <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
+            loading="lazy"
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=sunshine.onindonesia.id&dimension=1024x600"
             alt="app-screenshot"
@@ -41,6 +43,7 @@ function Projects() {
         </div>
         <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
+            loading="lazy"
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=onmarket.id&dimension=1024x600"
             alt="app-screenshot"
@@ -56,6 +59,7 @@ function Projects() {
         </div>
         <div className="relative   rounded-lg overflow-hidden mx-auto md:m-0">
           <img
+            loading="lazy"
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=seller.onmarket.id&dimension=1024x600"
             alt="app-screenshot"
@@ -71,6 +75,7 @@ function Projects() {
         </div>
         <div className="relative    rounded-lg overflow-hidden mx-auto md:m-0">
           <img
+            loading="lazy"
             className="w-full transition-transform duration-300 transform hover:scale-105"
             src="https://api.screenshotmachine.com?key=67285c&url=admin.onmarket.id&dimension=1024x600"
             alt="app-screenshot"

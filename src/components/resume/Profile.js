@@ -22,7 +22,7 @@ function Profile() {
         className="mx-auto w-28 h-28 outline outline-1 outline-slate-100 rounded-full overflow-hidden bg-clip-padding backdrop-filter backdrop-blur-sm border border-gray-100
 "
       >
-        <img className="mb-[-10px]" src={avatar} alt="avatar" />
+        <img className="mb-[-10px]" src={avatar} alt="avatar" loading="lazy" />
       </div>
       <div className="flex flex-col items-center mt-5 ">
         <h2 className="text-xl font-bold font-poppins">
