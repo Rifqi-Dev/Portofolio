@@ -60,6 +60,17 @@ function Navbar() {
           </Link>
           <Link
             activeClass="text-red-400 "
+            to="resume"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-30}
+            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
+          >
+            Resume
+          </Link>
+          <Link
+            activeClass="text-red-400 "
             to="project"
             smooth={true}
             duration={500}
@@ -110,6 +121,17 @@ function Navbar() {
               className="cursor-pointer hover:text-red-400 transition-colors duration-300"
             >
               Skills
+            </Link>
+            <Link
+              activeClass="text-red-400 "
+              to="resume"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-30}
+              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
+            >
+              Resume
             </Link>
             <Link
               activeClass="text-red-400 "

@@ -4,7 +4,7 @@ import React from "react";
 
 function Projects() {
   return (
-    <div className="relative px-5 lg:px-32 md:px-9">
+    <div className="relative px-5 lg:px-32 md:px-9 pb-20">
       <h3 className="text-center font-poppins text-[36px] font-bold pt-[65px] mb-5">
         My Projects
       </h3>
