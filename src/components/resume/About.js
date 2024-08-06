@@ -7,18 +7,15 @@ const mock = {
 
 function About() {
   return (
-    <>
-      <div
-        className="p-8 rounded-xl bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100
- text-white w-fit h-fit "
-        id="about-me"
-      >
-        <h3 className="font-montserrat text-3xl font-semibold">About Me</h3>
-        <p className="mt-5 font-helvetica text-justify text-base font-normal">
-          {mock.about}
-        </p>
-      </div>
-    </>
+    <div
+      className="p-8  rounded-md bg-red-700 bg-opacity-20 text-white z-10"
+      id="about-me"
+    >
+      <h3 className="font-montserrat text-3xl font-semibold">About Me</h3>
+      <p className="mt-5 font-helvetica text-justify text-base font-normal">
+        {mock.about}
+      </p>
+    </div>
   );
 }
 

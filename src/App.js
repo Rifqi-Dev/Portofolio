@@ -39,6 +39,9 @@ function App() {
       <section className="w-full my-4  md:min-h-screen " id="skills">
         <WhatIdo />
       </section>
+      <section className="w-full mt-4" id="resume">
+        <Resume />
+      </section>
       <section className="w-full my-4 " id="project">
         <Projects />
       </section>
@@ -49,7 +52,6 @@ function App() {
         <Weather />
         <Earthquacke />
       </div> */}
-      {/* <Resume /> */}
       <Footer />
       {/* <div className="glowing_stars">
         <div className="star"></div>
