@@ -58,17 +58,7 @@ function Navbar() {
           >
             Skills
           </Link>
-          <Link
-            activeClass="text-red-400 "
-            to="resume"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-30}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Resume
-          </Link>
+
           <Link
             activeClass="text-red-400 "
             to="project"
@@ -79,6 +69,17 @@ function Navbar() {
             className="cursor-pointer hover:text-red-400 transition-colors duration-300"
           >
             Projects
+          </Link>
+          <Link
+            activeClass="text-red-400 "
+            to="resume"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-30}
+            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
+          >
+            Resume
           </Link>
           <Link
             activeClass="text-red-400 "
@@ -122,17 +123,7 @@ function Navbar() {
             >
               Skills
             </Link>
-            <Link
-              activeClass="text-red-400 "
-              to="resume"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-30}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Resume
-            </Link>
+
             <Link
               activeClass="text-red-400 "
               onClick={toggleMenu}
@@ -143,6 +134,17 @@ function Navbar() {
               className="cursor-pointer hover:text-red-400 transition-colors duration-300"
             >
               Projects
+            </Link>
+            <Link
+              activeClass="text-red-400 "
+              to="resume"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-30}
+              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
+            >
+              Resume
             </Link>
             <Link
               activeClass="text-red-400 "

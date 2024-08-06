@@ -22,10 +22,17 @@ function Resume() {
       <h3 className="text-center font-poppins text-[36px] font-bold pt-4 mb-12">
         Resume
       </h3>
-      <div className="container  md:px-20  grid grid-cols-1 md:grid-cols-15/85 gap-6 m-auto">
+      <div className="my-2">
+        <About />
+      </div>
+      <div className="my-2">
+        <Work />
+      </div>
+
+      {/* <div className="container  md:px-20  grid grid-cols-1 md:grid-cols-15/85 gap-6 m-auto">
         <Nav setState={setState} state={state} />
         <div className=" w-full">{profile[state]}</div>
-      </div>
+      </div> */}
     </div>
   );
 }

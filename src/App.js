@@ -39,11 +39,12 @@ function App() {
       <section className="w-full my-4  md:min-h-screen " id="skills">
         <WhatIdo />
       </section>
-      <section className="w-full mt-4" id="resume">
-        <Resume />
-      </section>
+
       <section className="w-full my-4 " id="project">
         <Projects />
+      </section>
+      <section className="w-full mt-4" id="resume">
+        <Resume />
       </section>
       <section className="w-full mt-8" id="contact">
         <Contact />
