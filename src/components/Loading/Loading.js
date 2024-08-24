@@ -4,9 +4,9 @@ function Loading() {
   return (
     <div>
       <div className="flex justify-center items-center h-screen bg-transparent flex-col">
-        <div className="box w-16 h-16 bg-[#08fc04] rounded-sm animate-move-jump-spin flex justify-center items-center">
-          <div className="box w-9 h-9 bg-black flex justify-center items-center">
-            <div className="h-5 w-5  bg-[#08fcfc] m-auto" />
+        <div className="box w-12 h-12 bg-[#08fc04] rounded-sm animate-move-jump-spin flex justify-center items-center">
+          <div className="box w-8 h-8 bg-black flex justify-center items-center">
+            <div className="h-3 w-3  bg-[#08fcfc] m-auto" />
           </div>
         </div>
         <hr className="w-[250px] z-10" />
