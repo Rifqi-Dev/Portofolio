@@ -57,7 +57,7 @@ function Contact() {
           <div className=" lg:grid grid-cols-2 md:gap-3">
             <div>
               <label
-                class="block uppercase tracking-wide text-white text-sm font-bold mb-2"
+                className="block uppercase tracking-wide text-white text-sm font-bold mb-2"
                 for="name"
               >
                 Name
@@ -73,7 +73,7 @@ function Contact() {
             </div>
             <div>
               <label
-                class="block uppercase tracking-wide text-white text-sm font-bold mb-2"
+                className="block uppercase tracking-wide text-white text-sm font-bold mb-2"
                 for="email"
               >
                 Email
@@ -89,7 +89,7 @@ function Contact() {
             </div>
           </div>
           <label
-            class="block uppercase tracking-wide text-white text-sm font-bold mb-2"
+            className="block uppercase tracking-wide text-white text-sm font-bold mb-2"
             for="subject"
           >
             subject
@@ -103,7 +103,7 @@ function Contact() {
             required
           />
           <label
-            class="block uppercase tracking-wide text-white text-sm font-bold mb-2"
+            className="block uppercase tracking-wide text-white text-sm font-bold mb-2"
             for="message"
           >
             message
