@@ -13,6 +13,14 @@ import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 import Loading from "./components/Loading/Loading";
+import Sidenav from "./components/sidenav/Sidenav";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -72,22 +80,19 @@ function App() {
       >
         {!isLoading && !isTransitioning && (
           <>
-            <Navbar />
-            <Intro />
-            <section className="w-full my-4  md:min-h-screen " id="skills">
-              <WhatIdo />
-            </section>
-
-            <section className="w-full my-4 " id="project">
-              <Projects />
-            </section>
-            <section className="w-full mt-4" id="resume">
-              <Resume />
-            </section>
-            <section className="w-full mt-8" id="contact">
-              <Contact />
-            </section>
-            <Footer />
+            <div className=" w-100 flex-1">
+              <Router>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<Intro />} />
+                    <Route path="/skill" element={<WhatIdo />} />
+                    <Route path="/project" element={<Projects />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/contact" element={<Contact />} />
+                  </Route>
+                </Routes>
+              </Router>
+            </div>
           </>
         )}
       </div>

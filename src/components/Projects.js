@@ -5,7 +5,7 @@ import React from "react";
 function Projects() {
   return (
     <div className="relative px-5 lg:px-32 md:px-9 pb-20">
-      <h3 className="text-center font-poppins text-[36px] font-bold pt-[65px] mb-5">
+      <h3 className="text-center font-poppins text-[36px] font-bold mt-10 mb-5">
         My Projects
       </h3>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 justify-arround mt-10 ">
