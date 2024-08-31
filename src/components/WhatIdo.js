@@ -45,13 +45,13 @@ const Card = ({ title, text, icon, techStack }) => {
 
 function WhatIdo() {
   return (
-    <div className="flex flex-col items-center  m-auto ">
-      <h3 className="text-center font-poppins text-[36px] font-bold mt-[60px] z-10">
+    <div className="relative px-5 lg:px-32 md:px-9 pb-20">
+      <h3 className="text-center font-poppins text-[36px] font-bold mt-10 mb-5">
         Skills & Services
       </h3>
       <div
         // data-aos="zoom-in"
-        className="card-container p-5 mt-5 md:mt-10 grid md:grid-cols-2 gap-4 md:max-w-3xl w-full"
+        className="card-container p-5 mt-5 md:mt-10 grid md:grid-cols-2 gap-4 md:max-w-3xl w-full m-auto"
       >
         <Card
           title="Frontend Development"
