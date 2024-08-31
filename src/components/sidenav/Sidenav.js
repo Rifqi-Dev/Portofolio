@@ -13,8 +13,8 @@ import "./index.css";
 function Sidenav() {
   return (
     <>
-      <nav className="z-10 w-14 h-min-screen  p-2 ">
-        <div className="shrink-0  flex flex-col items-center gap-5 bg-white bg-opacity-5 px-5 py-2 rounded-lg h-full">
+      <nav className="z-10 md:w-14 w-full  p-2 ">
+        <div className="shrink-0  flex  md:flex-col items-center justify-evenly md:justify-start gap-5 bg-white bg-opacity-5 px-5 py-2 rounded-lg h-full">
           <NavLink
             data-tooltip-id="home-tooltip"
             to="/"
