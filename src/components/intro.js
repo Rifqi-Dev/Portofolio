@@ -9,7 +9,6 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import avatar from "../resources/avatar.png";
 import Weather from "./Weather";
 import Earthquacke from "./Earthquacke";
 import VisitorCount from "./VisitorCount";
@@ -37,7 +36,7 @@ function Intro() {
             >
               <img
                 className="mb-[-10px] lg:w-64 w-52"
-                src={avatar}
+                src="https://storage.kapuyuaxdev.my.id/personal-website/avatar.png"
                 alt="avatar"
                 loading="lazy"
               />
