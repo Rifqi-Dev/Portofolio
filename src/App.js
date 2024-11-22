@@ -21,6 +21,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import OnlineCompiler from "./components/OnlineCompiler/OnlineCompiler";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -88,6 +89,10 @@ function App() {
                     <Route path="/skill" element={<WhatIdo />} />
                     <Route path="/project" element={<Projects />} />
                     <Route path="/resume" element={<Resume />} />
+                    {/* <Route
+                      path="/online-js-compiler"
+                      element={<OnlineCompiler />}
+                    /> */}
                     <Route path="/contact" element={<Contact />} />
                   </Route>
                 </Routes>

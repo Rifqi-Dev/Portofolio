@@ -6,6 +6,7 @@ import {
   faCode,
   faEnvelope,
   faFileAlt,
+  faGear,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
@@ -29,7 +30,7 @@ function Sidenav() {
             to="/skill"
             className="text-white hover:cursor-pointer hover:text-red-400"
           >
-            <FontAwesomeIcon icon={faCode} />
+            <FontAwesomeIcon icon={faGear} />
             <ReactTooltip id="skill-tooltip" place="right" content="Skills" />
           </NavLink>
 
@@ -54,6 +55,19 @@ function Sidenav() {
             <FontAwesomeIcon icon={faFileAlt} />
             <ReactTooltip id="resume-tooltip" place="right" content="Resume" />
           </NavLink>
+
+          {/* <NavLink
+            data-tooltip-id="code-editor-tooltip"
+            to="/online-js-compiler"
+            className="text-white hover:cursor-pointer hover:text-red-400"
+          >
+            <FontAwesomeIcon icon={faCode} />
+            <ReactTooltip
+              id="code-editor-tooltip"
+              place="right"
+              content="Online Javascript Compiler"
+            />
+          </NavLink> */}
 
           <NavLink
             data-tooltip-id="contact-tooltip"
