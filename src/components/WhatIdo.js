@@ -66,6 +66,7 @@ function WhatIdo() {
             "https://img.shields.io/badge/TYPESCRIPT-3178C6?logo=typescript&logoColor=FFF",
             "https://img.shields.io/badge/ANGULAR-0F0F11?logo=angular",
             "https://img.shields.io/badge/REACT-1a2c3c?logo=react",
+            "https://img.shields.io/badge/Next-000000?logo=Next.js&logoColor=fff",
           ]}
         />
         <Card
@@ -78,6 +79,7 @@ function WhatIdo() {
             "https://img.shields.io/badge/PYTHON-3776AB?logo=python&logoColor=fff",
             "https://img.shields.io/badge/EXPRESS.JS-000000?logo=express",
             "https://elysiajs.com/assets/elysia_v.webp",
+            "https://img.shields.io/badge/Hono-E36002?logo=hono&logoColor=FFFFFF",
             "https://img.shields.io/badge/FLASK-000?logo=flask",
             "https://img.shields.io/badge/DOCKER-2496ED?logo=docker&logoColor=fff",
           ]}
@@ -97,6 +99,9 @@ function WhatIdo() {
             "https://img.shields.io/badge/MYSQL-4479A1?logo=mysql&logoColor=fff",
             "https://img.shields.io/badge/POSTGRESQL-4169E1?logo=postgresql&logoColor=fff",
             "https://img.shields.io/badge/MONGODB-47A248?logo=mongodb&logoColor=fff",
+            "https://img.shields.io/badge/Redis-FF4438?logo=redis&logoColor=fff",
+            "https://img.shields.io/badge/Sequelize-52B0E7?logo=Sequelize&logoColor=fff",
+            "https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=fff",
           ]}
         />
       </div>
