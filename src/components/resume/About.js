@@ -11,7 +11,7 @@ function About() {
       className="p-8  rounded-md bg-red-700 bg-opacity-20 text-white z-10"
       id="about-me"
     >
-      <h3 className="font-montserrat text-3xl font-semibold">About Me</h3>
+      <h3 className="font-poppins text-3xl font-semibold">About Me</h3>
       <p className="mt-5 font-helvetica text-justify text-base font-normal">
         {mock.about}
       </p>
