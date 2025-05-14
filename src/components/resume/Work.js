@@ -8,7 +8,7 @@ const data = [
     type: "Contract",
     jobTitle: "Fullstack Developer",
     from: dayjs("2023-08-14"),
-    to: null,
+    to: dayjs("2025-05-16"),
     responsibility: [
       "Collaborated with cross-functional teams to gather and analyze project requirements, translating them into technical specifications and actionable development plans.",
       "Designed and developed responsive and user-friendly web interfaces using HTML, CSS, and JavaScript, ensuring optimal user experiences across various devices and browsers.",
@@ -45,7 +45,7 @@ function Work() {
       className="p-8  rounded-md bg-red-700 bg-opacity-20 text-white z-10"
       id="work"
     >
-      <h3 className="font-montserrat text-3xl font-semibold">
+      <h3 className="font-poppins text-3xl font-semibold">
         Working Experience
       </h3>
       <div className="relative text-white mt-12">
