@@ -14,14 +14,6 @@ import Earthquacke from "./Earthquacke";
 import VisitorCount from "./VisitorCount";
 
 function Intro() {
-  const [title, settitle] = useState("Fullstack");
-
-  const onEnter = (e) => {
-    settitle("Fullstuck");
-  };
-  const onLeave = (e) => {
-    settitle("Fullstack");
-  };
   return (
     <div>
       <div
@@ -55,14 +47,10 @@ function Intro() {
                 I'm Rifqi Firlian Pratama
               </h2>
               <h3 className=" lg:text-[18px] text-[14px] font-poppins">
-                <span
-                  className="bg-red-800 p-1 rounded-md hover:bg-white hover:text-red-800 transition-all ease-in-out duration-300"
-                  onMouseEnter={onEnter}
-                  onMouseLeave={onLeave}
-                >
-                  {title}
+                <span className="bg-red-800 p-1 rounded-md hover:bg-white hover:text-red-800 transition-all ease-in-out duration-300">
+                  Software
                 </span>{" "}
-                Developer
+                Engineer
               </h3>
               <div className="flex gap-4">
                 <NeonContainer
