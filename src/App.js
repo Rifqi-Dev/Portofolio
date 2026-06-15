@@ -1,103 +1,56 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import Intro from "./components/intro";
-import Resume from "./components/resume/Index";
-import Particles from "react-particles";
-import { loadSlim } from "tsparticles-slim";
-import template from "./utils/stars-particles.json";
-import Weather from "./components/Weather";
-import Earthquacke from "./components/Earthquacke";
-import WhatIdo from "./components/WhatIdo";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import StarField from "./components/StarField";
 import Loading from "./components/Loading/Loading";
-import Sidenav from "./components/sidenav/Sidenav";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import Layout from "./components/Layout/Layout";
-import OnlineCompiler from "./components/OnlineCompiler/OnlineCompiler";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
-    document.title = "Rifqi Dev ";
-  }, []);
-
-  const particlesInit = useCallback(async (engine) => {
-    // console.log(engine);
-
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    // await console.log(container);
+    document.title = "Rifqi Dev";
+    AOS.init({ duration: 1500 });
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
-      setIsTransitioning(true);
-    }, 4000);
-
-    return () => clearTimeout(timeout);
+      setTimeout(() => setVisible(true), 100);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (!isLoading) {
-      const transitionTimeout = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 100);
-
-      return () => clearTimeout(transitionTimeout);
-    }
-  }, [isLoading]);
   return (
-    <div className="App text-white ">
-      <Particles
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={template}
-      />
+    <div className="App text-white bg-black min-h-screen">
+      <StarField />
       {isLoading && (
-        <div
-          className={`${
-            isLoading ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-500`}
-        >
+        <div className="fixed inset-0 z-50">
           <Loading />
         </div>
       )}
       <div
-        className={`${
-          !isLoading && !isTransitioning ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-500`}
+        className={`transition-opacity duration-500 ${
+          visible ? "opacity-100" : "opacity-0"
+        }`}
       >
-        {!isLoading && !isTransitioning && (
+        {!isLoading && (
           <>
-            <div className=" w-100 flex-1">
-              <Router>
-                <Routes>
-                  <Route path="/" element={<Layout />}>
-                    <Route index element={<Intro />} />
-                    <Route path="/skill" element={<WhatIdo />} />
-                    <Route path="/project" element={<Projects />} />
-                    <Route path="/resume" element={<Resume />} />
-                    {/* <Route
-                      path="/online-js-compiler"
-                      element={<OnlineCompiler />}
-                    /> */}
-                    <Route path="/contact" element={<Contact />} />
-                  </Route>
-                </Routes>
-              </Router>
-            </div>
+            <Navbar />
+            <main className="relative z-10">
+              <Hero />
+              <Skills />
+              <Experience />
+              <Projects />
+              <Contact />
+            </main>
           </>
         )}
       </div>
