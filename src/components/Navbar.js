@@ -1,167 +1,86 @@
-import React, { useEffect, useState } from "react";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-  const [isScrolled, setIsScrolled] = useState(false);
+const navLinks = [
+  { to: "home", label: "Home" },
+  { to: "skills", label: "Skills" },
+  { to: "experience", label: "Experience" },
+  { to: "projects", label: "Projects" },
+  { to: "contact", label: "Contact" },
+];
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    if (offset > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed w-full z-50 transition duration-300 ${
-        isScrolled ? "bg-opacity-100" : "bg-opacity-60"
-      } bg-[#000] text-white`}
+      className={`fixed top-0 w-full z-50 font-poppins transition-all duration-300 ${
+        scrolled
+          ? "bg-black/90 backdrop-blur-sm shadow-lg shadow-black/50"
+          : "bg-transparent"
+      }`}
     >
-      <div className="container mx-auto flex justify-between items-center py-5 px-8">
-        <div className="text-2xl font-bold "></div>
-        <div className="hidden md:flex space-x-7">
-          <Link
-            activeClass="text-red-400 "
-            to="home"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-20}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Home
-          </Link>
-          <Link
-            activeClass="text-red-400 "
-            to="skills"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-20}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Skills
-          </Link>
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-end items-center">
+        <ul className="hidden md:flex gap-8">
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                spy={true}
+                smooth={true}
+                duration={800}
+                offset={-70}
+                className="text-white/80 text-sm cursor-pointer hover:text-red-400 transition-colors duration-200"
+                activeClass="text-red-400 border-b border-red-500 pb-1"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-          <Link
-            activeClass="text-red-400 "
-            to="project"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-30}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Projects
-          </Link>
-          <Link
-            activeClass="text-red-400 "
-            to="resume"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-30}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Resume
-          </Link>
-          <Link
-            activeClass="text-red-400 "
-            to="contact"
-            smooth={true}
-            duration={500}
-            spy={true}
-            className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-          >
-            Contact
-          </Link>
-        </div>
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-white">
-            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-          </button>
-        </div>
+        <button
+          className="md:hidden text-white text-xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </button>
       </div>
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="flex flex-col space-y-4 py-4 px-5">
-            <Link
-              activeClass="text-red-400 "
-              onClick={toggleMenu}
-              to="home"
-              smooth={true}
-              duration={500}
-              spy={true}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              activeClass="text-red-400 "
-              onClick={toggleMenu}
-              to="skills"
-              smooth={true}
-              duration={500}
-              spy={true}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Skills
-            </Link>
 
-            <Link
-              activeClass="text-red-400 "
-              onClick={toggleMenu}
-              to="project"
-              smooth={true}
-              duration={500}
-              spy={true}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Projects
-            </Link>
-            <Link
-              activeClass="text-red-400 "
-              to="resume"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-30}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Resume
-            </Link>
-            <Link
-              activeClass="text-red-400 "
-              onClick={toggleMenu}
-              to="contact"
-              smooth={true}
-              duration={500}
-              spy={true}
-              className="cursor-pointer hover:text-red-400 transition-colors duration-300"
-            >
-              Contact
-            </Link>
-          </div>
+      {menuOpen && (
+        <div className="md:hidden bg-black/95 backdrop-blur-sm px-6 pb-6 border-t border-white/10">
+          <ul className="flex flex-col gap-4 pt-4">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  duration={800}
+                  offset={-70}
+                  className="text-white/80 text-sm cursor-pointer hover:text-red-400 transition-colors duration-200 block py-1"
+                  activeClass="text-red-400"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </nav>
   );
-}
+};
 
 export default Navbar;
