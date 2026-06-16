@@ -44,7 +44,7 @@ function App() {
         {!isLoading && (
           <>
             <Navbar />
-            <main className="relative z-10">
+            <main className="relative z-10 container mx-auto">
               <Hero />
               <Skills />
               <Experience />
