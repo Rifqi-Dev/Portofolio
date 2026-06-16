@@ -7,10 +7,7 @@ import {
   faLocationDot,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -25,9 +22,9 @@ const Toast = Swal.mixin({
 });
 
 const emailConfig = {
-  service_id: "service_c6kacwf",
-  template_id: "template_6sizxn6",
-  public_key: "uOaJuvlu7UWJzNq14",
+  service_id: "service_y2m173e",
+  template_id: "template_0f617kj",
+  public_key: "mjE9rmJ59UT__9GMx",
 };
 
 const inputClass =
@@ -53,7 +50,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="relative z-10 py-20 px-6 lg:px-32 md:px-10">
+    <section
+      id="contact"
+      className="relative z-10 py-20 px-6 lg:px-32 md:px-10"
+    >
       <h2
         className="text-center font-poppins text-[36px] font-bold mb-14 text-white"
         data-aos="fade-up"
@@ -66,10 +66,7 @@ function Contact() {
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-start">
         {/* Left — Info */}
-        <div
-          className="flex flex-col gap-8"
-          data-aos="fade-right"
-        >
+        <div className="flex flex-col gap-8" data-aos="fade-right">
           <div>
             <h3 className="font-poppins font-bold text-2xl text-white mb-3">
               Let's work together
@@ -112,9 +109,7 @@ function Contact() {
                 <p className="text-white/40 text-xs font-poppins uppercase tracking-widest mb-0.5">
                   LinkedIn
                 </p>
-                <p className="text-white font-poppins text-sm">
-                  rifqi-firlian
-                </p>
+                <p className="text-white font-poppins text-sm">rifqi-firlian</p>
               </div>
             </a>
 
@@ -131,9 +126,7 @@ function Contact() {
                 <p className="text-white/40 text-xs font-poppins uppercase tracking-widest mb-0.5">
                   GitHub
                 </p>
-                <p className="text-white font-poppins text-sm">
-                  rifqi-dev
-                </p>
+                <p className="text-white font-poppins text-sm">rifqi-dev</p>
               </div>
             </a>
 
@@ -161,7 +154,11 @@ function Contact() {
           className="backdrop-blur-sm bg-white/5 border border-white/15 rounded-2xl p-8"
           data-aos="fade-left"
         >
-          <form ref={emailRef} onSubmit={sendMail} className="flex flex-col gap-5">
+          <form
+            ref={emailRef}
+            onSubmit={sendMail}
+            className="flex flex-col gap-5"
+          >
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="text-white/50 text-xs font-poppins uppercase tracking-widest">
