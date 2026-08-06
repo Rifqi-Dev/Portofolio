@@ -79,7 +79,7 @@ const Experience = () => {
 
       <div className="relative max-w-3xl mx-auto">
         {/* Timeline line */}
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-red-500 via-red-800/50 to-transparent" />
+        <div className="absolute left-6 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-red-500 via-red-800/50 to-transparent" />
 
         {experiences.map((exp, index) => (
           <div
@@ -89,7 +89,7 @@ const Experience = () => {
             data-aos-delay={index * 150}
           >
             {/* Dot */}
-            <div className="absolute left-[18px] top-3 w-4 h-4 rounded-full bg-red-600 border-2 border-red-400 shadow-[0_0_10px_#A20B0B]" />
+            <div className="absolute left-6 top-3 w-4 h-4 -translate-x-1/2 rounded-full bg-red-600 border-2 border-red-400 shadow-[0_0_10px_#A20B0B]" />
 
             <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-colors duration-300">
               <div className="flex flex-wrap justify-between items-start gap-2 mb-3">

@@ -1,0 +1,107 @@
+/* inherits: true is required — the JS only sets these on .magic-bento-card
+   itself, and the ::before/::after gradients need to inherit them from it. */
+@property --glow-x {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --glow-y {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --glow-intensity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.magic-bento-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tilt now goes through GSAP (see MagicBento.js), which writes `transform`
+   directly as an inline style each frame — a plain inline style always
+   beats an external stylesheet selector of any specificity as long as
+   that selector isn't `!important`, so it naturally wins over AOS's
+   `[data-aos...].aos-animate { transform: translateZ(0px); }` without
+   needing a CSS override here (unlike the old CSS-custom-property
+   version, which needed `!important` to fight that rule directly).
+
+   The glow's --glow-x/--glow-y/--glow-intensity are still CSS-driven
+   though, and still need this: AOS's `.aos-animate` rule sets
+   `transition-property: opacity, transform` with higher specificity
+   (0,3,0) than `.magic-bento-card.aos-animate` (0,2,0), and
+   transition-property doesn't merge across rules — without `!important`
+   here, AOS's rule would win entirely and our custom properties would
+   never transition at all (see git history — this exact bug happened to
+   the tilt version before it moved to GSAP). Scoped to `.aos-animate`
+   (not the bare class) so AOS's own entrance slide-in is left alone. */
+.magic-bento-card.aos-animate {
+  transition:
+    --glow-x 0.15s linear,
+    --glow-y 0.15s linear,
+    --glow-intensity 0.3s ease !important;
+}
+
+.magic-bento-card::before,
+.magic-bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Inner spotlight glow — intensity ramps up as the cursor nears the card,
+   even while it's still outside the card's bounds. */
+.magic-bento-card::before {
+  z-index: 0;
+  background: radial-gradient(
+    280px circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.16)),
+    transparent 70%
+  );
+}
+
+/* Glowing border ring — same proximity-driven intensity. */
+.magic-bento-card::after {
+  z-index: 2;
+  padding: 1px;
+  background: radial-gradient(
+    280px circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.9)),
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Click ripple, radiating from the click point. */
+.magic-bento-ripple {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--glow-color), 0.4) 0%,
+    rgba(var(--glow-color), 0.2) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: scale(0);
+  animation: magic-bento-ripple 0.8s ease-out forwards;
+}
+
+@keyframes magic-bento-ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

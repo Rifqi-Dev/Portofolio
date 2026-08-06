@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MagicBentoCard, { MagicBentoGrid } from "./reactbits/MagicBento";
 import {
   faJs,
   faPython,
@@ -18,6 +19,7 @@ import {
   faEye,
   faTag,
   faCode,
+  faVectorSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
 const DEVICON = (id) =>
@@ -55,6 +57,7 @@ const tools = [
   { name: "Postman", img: DEVICON("postman/postman-original") },
   { name: "Anaconda", img: DEVICON("anaconda/anaconda-original") },
   { name: "LabelMe", fa: faTag, color: "#A20B0B" },
+  { name: "CVAT", fa: faVectorSquare, color: "#A20B0B" },
 ];
 
 const SkillTag = ({ name, fa, img, color, icon, imgClass = "" }) => (
@@ -80,14 +83,14 @@ const SkillTag = ({ name, fa, img, color, icon, imgClass = "" }) => (
 );
 
 const BentoCard = ({ children, className = "", delay = 0, ...props }) => (
-  <div
+  <MagicBentoCard
     className={`backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 ${className}`}
     data-aos="fade-up"
     data-aos-delay={delay}
     {...props}
   >
     {children}
-  </div>
+  </MagicBentoCard>
 );
 
 const SectionLabel = ({ children }) => (
@@ -117,7 +120,7 @@ const Skills = () => {
       </h2>
 
       {/* Bento grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-auto">
+      <MagicBentoGrid className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-auto">
         {/* ── Tech Stack — full width ── */}
         <BentoCard className="md:col-span-12" delay={0}>
           <SectionLabel>Tech Stack</SectionLabel>
@@ -169,7 +172,7 @@ const Skills = () => {
             ))}
           </div>
         </BentoCard>
-      </div>
+      </MagicBentoGrid>
     </section>
   );
 };

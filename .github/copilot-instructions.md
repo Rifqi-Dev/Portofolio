@@ -66,6 +66,12 @@ className = "backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl";
 - **Number counters:** `@react-spring/web` `animated.span` with spring from `0` to target.
 - **Hover effects:** Tailwind `hover:scale-105 transition-transform duration-300`.
 - **Do NOT** use `framer-motion` — not in the project.
+- **GSAP:** added as a narrow, explicit exception for the MagicBento
+  3D tilt effect (`src/components/reactbits/MagicBento.js`) after the
+  CSS-custom-property version proved janky on `mousemove`. Don't reach
+  for it elsewhere without the same kind of concrete performance
+  justification — React Spring/AOS remain the defaults for everything
+  else.
 
 ---
 

@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen z-10 py-20 px-5 lg:px-32 md:px-10"
+      className="relative z-10 py-20 px-5 lg:px-32 md:px-10"
     >
       <h2
         className="text-center font-poppins text-[36px] font-bold mb-12 text-white"

@@ -7,16 +7,11 @@ const StarField = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     let animationId;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
+    let resizeTimeout;
 
     const NUM_STARS = 250;
-    const stars = Array.from({ length: NUM_STARS }, () => ({
+
+    const createStar = () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       radius: Math.random() * 1.4 + 0.2,
@@ -25,7 +20,24 @@ const StarField = () => {
       twinkleDir: Math.random() > 0.5 ? 1 : -1,
       driftX: (Math.random() - 0.5) * 0.08,
       driftY: Math.random() * 0.06 + 0.02,
-    }));
+    });
+
+    let stars = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // Regenerate stars for the new dimensions, otherwise stars stay
+      // confined to the old (smaller) canvas area after maximize/restore.
+      stars = Array.from({ length: NUM_STARS }, createStar);
+    };
+    resize();
+
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 150);
+    };
+    window.addEventListener("resize", handleResize);
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -63,7 +75,8 @@ const StarField = () => {
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      clearTimeout(resizeTimeout);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
