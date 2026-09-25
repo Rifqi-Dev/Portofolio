@@ -1,8 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Celestial Archive palette */
+  --space: #050b1a;
+  --space-blue: #0b1633;
+  --text: #e8e5d8;
+  --muted: #8d98b5;
+  --gold: #c9b88a;
+  --glow: #8fb8ff;
+}
 
 body {
   scroll-behavior: smooth;

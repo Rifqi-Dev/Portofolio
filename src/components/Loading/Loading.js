@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "@react-spring/web";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
+import usePrefersReducedMotion from "../book/usePrefersReducedMotion";
 
 const S = "#d1d5db"; // main stroke
 const SD = "#6b7280"; // secondary/distant smoke stroke
@@ -198,11 +202,30 @@ const SmokeClouds = ({ opacity }) => (
   </div>
 );
 
+// The rotate hint's entrance: its line of text sits on the face of a cube
+// that starts with that face pointing down (rotateX -90deg, edge-on, so
+// invisible) and rolls forward until the face points at the viewer.
+// `translateZ(-d) rotateX() translateZ(d)` pivots around the cube's centre
+// (d = half the cube's depth, one line of text is ~16px tall so the cube
+// is ~16px deep) rather than around the face itself.
+const CUBE_HALF_DEPTH = 8; // px
+const cubeTransform = (deg) =>
+  `perspective(400px) translateZ(${-CUBE_HALF_DEPTH}px) rotateX(${deg}deg) translateZ(${CUBE_HALF_DEPTH}px)`;
+
 function Loading() {
   const [progress, setProgress] = useState(0);
+  const reduced = usePrefersReducedMotion();
+  const cube = useSpring({
+    from: { rx: reduced ? 0 : -90 },
+    to: { rx: 0 },
+    delay: 300,
+    // A fixed, slow, ease-out roll (was a ~1.3 s spring). The loading bar below is
+    // stretched to match, so the text is on screen for a while once it has landed.
+    config: { duration: 1800, easing: (t) => 1 - (1 - t) ** 3 },
+  });
 
   useEffect(() => {
-    const duration = 1900;
+    const duration = 2800;
     const interval = 20;
     const steps = duration / interval;
     let current = 0;
@@ -250,15 +273,31 @@ function Loading() {
         </div>
       </div> */}
 
+      {/* Portrait phones only (`md:hidden`: Tailwind's md covers desktop widths
+          and sideways phones, which don't need it) — the loading bar is the
+          first thing every phone visitor sees. Sits above the bar so it's read
+          before the loading finishes (this screen only lasts ~3.5 s). */}
+      <animated.p
+        className="md:hidden flex items-center gap-2 text-white/60 font-inter text-xs"
+        style={{
+          transform: cube.rx.to(cubeTransform),
+          opacity: cube.rx.to((deg) => 1 - Math.abs(deg) / 90),
+          backfaceVisibility: "hidden",
+        }}
+      >
+        <FontAwesomeIcon icon={faMobileScreenButton} className="rotate-90 text-archive-gold" />
+        Rotate your screen for a better experience
+      </animated.p>
+
       {/* Progress bar */}
       <div className="flex flex-col items-center gap-2 w-[260px]">
         <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden border border-white/10">
           <div
-            className="h-full bg-gradient-to-r from-red-700 to-red-400 rounded-full"
+            className="h-full bg-gradient-to-r from-archive-gold to-archive-glow rounded-full"
             style={{
               width: `${progress}%`,
               transition: "width 0.04s linear",
-              boxShadow: "0 0 8px rgba(239,68,68,0.7)",
+              boxShadow: "0 0 8px rgba(143,184,255,0.7)",
             }}
           />
         </div>

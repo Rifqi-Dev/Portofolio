@@ -64,7 +64,7 @@ const StarField = () => {
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
+        ctx.fillStyle = `rgba(232, 229, 216, ${s.opacity})`;
         ctx.fill();
       });
 
@@ -91,7 +91,7 @@ const StarField = () => {
         height: "100%",
         zIndex: 0,
         pointerEvents: "none",
-        background: "#000",
+        background: "transparent",
       }}
     />
   );

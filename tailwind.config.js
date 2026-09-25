@@ -3,6 +3,23 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
+      // `md:` = the "book layout" breakpoint: viewports >= 768px wide, OR any
+      // short landscape viewport (a phone held sideways, which can be narrower
+      // than 768px). Keep in sync with LANDSCAPE_SHORT_QUERY in
+      // src/components/book/useIsLandscapeShort.js.
+      screens: {
+        md: { raw: "(min-width: 768px), (orientation: landscape) and (max-height: 500px)" },
+      },
+      colors: {
+        space: "#050B1A",
+        "space-blue": "#0B1633",
+        archive: {
+          text: "#E8E5D8",
+          muted: "#8D98B5",
+          gold: "#C9B88A",
+          glow: "#8FB8FF",
+        },
+      },
       keyframes: {
         "move-jump-spin": {
           "0%": {
@@ -32,9 +49,15 @@ module.exports = {
       },
     },
     fontFamily: {
-      poppins: ["Poppins"],
+      // Celestial Archive redesign repoints the existing `font-poppins`
+      // utility to Inter (the new body font) instead of renaming it across
+      // every file that already uses it.
+      poppins: ["Inter", "sans-serif"],
       montserrat: ["Montserrat"],
       helvetica: ["Helvetica"],
+      cinzel: ["Cinzel", "serif"],
+      cormorant: ["Cormorant Garamond", "serif"],
+      inter: ["Inter", "sans-serif"],
     },
     gridTemplateColumns: {
       "20/65/15": "20% 65% 15%",
