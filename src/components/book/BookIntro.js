@@ -9,15 +9,16 @@ import { STAGE_WIDTH, fitScale } from "./BookFit";
 // calls `onFinish`; App.js then sets `fading` and fades the real book in
 // underneath while this overlay dissolves (see the springs below).
 //
-// The video (1280x720, transparent VP9 WebM, keyed in porto-image) ends on
-// an open book that was measured at x 150-1099 / y 60-667 of the frame. These
+// The video (1280x720, transparent VP9 WebM, keyed in porto-image, cut at
+// source frame 200) ends on an open book measured at x 150-1099 / y 60-667 of
+// the frame. These
 // offsets scale that book to BookFrame's width and centre it on the frame, so
 // the last video frame lands where the real book appears.
 const VIDEO_WIDTH = "134.74%"; // of the frame's width
 const VIDEO_LEFT = "-15.79%"; // of the frame's width
 const VIDEO_TOP = "-7.43%"; // of the frame's height
 const BOOK_HEIGHT = (STAGE_WIDTH * 2) / 3; // the frame's 3:2 box at its designed width
-const SAFETY_TIMEOUT_MS = 12000; // video is 10s; never trap the visitor
+const SAFETY_TIMEOUT_MS = 12000; // video is 8.4s (ends at source frame 200); never trap the visitor
 export const DISSOLVE_MS = 900; // App.js unmounts the overlay after this
 
 // Safari/iOS decode VP9 but drop the alpha channel (it would show an opaque
