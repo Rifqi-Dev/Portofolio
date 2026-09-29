@@ -116,7 +116,7 @@ const BookIntro = ({ onFinish, onUnavailable, fading }) => {
       aria-hidden="true"
     >
       {/* Mirrors App.js's <main> + BookFrame box so the video shares the book's position. */}
-      <div className="container mx-auto h-full px-4 md:px-16 py-10 flex flex-col items-center justify-center">
+      <div className="w-full h-full px-4 md:px-16 py-10 flex flex-col items-center justify-center">
         <div
           className="relative flex-shrink-0"
           style={{ width: STAGE_WIDTH, height: BOOK_HEIGHT, transform: `scale(${scale})` }}

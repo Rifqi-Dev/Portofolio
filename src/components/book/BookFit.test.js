@@ -48,6 +48,19 @@ test("on a wide desktop the scale is 1 (a pass-through)", () => {
   expect(stageOf(container).parentElement.style.width).toBe("1024px");
 });
 
+test("on a 2K screen the book scales up to fill more of the height", () => {
+  setViewport(2560, 1440);
+  const { container } = renderFit();
+  const expected = (1440 * 0.75) / (1024 * (2 / 3));
+  expect(parseFloat(stageOf(container).style.transform.slice(6))).toBeCloseTo(expected, 5);
+});
+
+test("the scale-up is capped", () => {
+  setViewport(7680, 4320);
+  const { container } = renderFit();
+  expect(stageOf(container).style.transform).toBe("scale(2.5)");
+});
+
 test("on a narrower desktop, scales by width so content and frame shrink together", () => {
   setViewport(1080, 800);
   const { container } = renderFit();

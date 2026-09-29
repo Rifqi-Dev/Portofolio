@@ -19,13 +19,7 @@ import { ContactFormPanel } from "./panels/ContactPanels";
 // book's pages to that entry's content, instead of navigating away.
 // Each `subItems` entry is either:
 //   - `{ id, label, Panel }` — a single-page item; the left page renders
-//     `Panel`, the right page holds only the Next control (Experience,
-//     Contact's "Send a Message").
-//   - `{ id, label, href }` — an action link, not a page: clicking it in
-//     the checklist opens `href` directly (external link or `mailto:`)
-//     instead of calling `setPageIndex`, so `pageIndex` never points at
-//     one of these — Back/Next only ever step between entries that have
-//     a `Panel`/`LeftPanel` (Contact's Email/LinkedIn/GitHub).
+//     `Panel`, the right page holds only the Next control (Experience).
 //   - `{ id, label, LeftPanel, RightPanel, rightLabel? }` — a fixed
 //     two-page spread; the left page renders `LeftPanel` under the
 //     `Chapter N / label` heading, the right page renders `RightPanel`
@@ -161,41 +155,17 @@ const bookChapters = [
     subtitle: "Write the Next Page",
     description: "Open to new opportunities, collaborations, or a friendly chat.",
     icon: contactIcon,
-    // No overview Next button — the checklist is mostly direct links, and
-    // Next is only wanted at the start of chapters 1–3.
-    hideOverviewNext: true,
+    // The overview's right page shows the contact form directly (desktop) —
+    // there are no sub-pages, and the direct links (Email/LinkedIn/GitHub)
+    // were dropped per user request. Mobile uses `bentoTiles` below.
+    overviewRightPanel: ContactFormPanel,
     // Mobile: the container fills its whole screen and the form stretches
     // to fill it (other chapters hug their content).
     fillScreen: true,
     bentoTiles: [
       { id: "contact-form", span: 2, title: "Send a Message", Tile: ContactFormPanel },
     ],
-    subItems: [
-      {
-        id: "contact-email",
-        label: "Email",
-        href: "mailto:firlianrifqi22@gmail.com",
-      },
-      {
-        id: "contact-linkedin",
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/in/rifqi-firlian/",
-      },
-      {
-        id: "contact-github",
-        label: "GitHub",
-        href: "https://github.com/rifqi-dev",
-      },
-      {
-        id: "contact-form",
-        label: "Send a Message",
-        Panel: ContactFormPanel,
-        // No Next control here — it's the last pageable entry in the
-        // last chapter, submitting the form is the natural end of the
-        // flow, and Next would otherwise just wrap around to Skills.
-        hideNext: true,
-      },
-    ],
+    subItems: [],
   },
 ];
 

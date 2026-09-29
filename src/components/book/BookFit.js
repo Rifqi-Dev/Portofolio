@@ -5,14 +5,21 @@ export const BOOK_FIT_EVENT = "bookfit";
 export const STAGE_WIDTH = 1024; // BookFrame's max-w-5xl, the width the book is designed at
 const SIDE_GUTTER = 64; // each side: 20 gap + 36 tab + 8 margin for the page-mark tabs (App.js md:px-16)
 const HEIGHT_MARGIN = 16; // breathing room above/below when fitting the height
+const BASE_HEIGHT = (STAGE_WIDTH * 2) / 3; // the frame's 3:2 box at its designed width
+const FILL_HEIGHT = 0.75; // on big screens the book grows to about this share of the viewport height
+const MAX_SCALE = 2.5;
 
 // Scale that fits a book of `naturalHeight` (at STAGE_WIDTH wide) on screen:
 // always by width (so the content and the frame art shrink together on narrow
 // desktops instead of the content crowding a smaller frame), and by height too
-// on a short landscape viewport (a sideways phone).
+// on a short landscape viewport (a sideways phone). On tall screens (2K/4K) it
+// also scales *up* so the book doesn't look tiny; that ceiling comes from the
+// fixed BASE_HEIGHT, not `naturalHeight`, so the book keeps one size while
+// taller chapter pages come and go.
 export const fitScale = (naturalHeight, { fitHeight = false } = {}) =>
   Math.min(
-    1,
+    MAX_SCALE,
+    Math.max(1, (window.innerHeight * FILL_HEIGHT) / BASE_HEIGHT),
     (window.innerWidth - 2 * SIDE_GUTTER) / STAGE_WIDTH,
     fitHeight ? (window.innerHeight - HEIGHT_MARGIN) / naturalHeight : Infinity,
   );

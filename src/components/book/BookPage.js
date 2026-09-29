@@ -20,9 +20,9 @@ const NAV_BUTTON =
 // entry, but a chapter can override it with its own `checklist` array
 // (`{ label, pageIndex } | { label, href }`) to list more names than
 // there are real pages — e.g. two role names that share one paired
-// page. A row with `href` (Contact's Email/LinkedIn/GitHub) renders as
-// a plain link that opens the address directly instead of calling
-// `setPageIndex` — it's an action, not a page. Back/Next (below) only
+// page. A chapter can instead set `overviewRightPanel` (Contact's form),
+// which replaces the checklist and the Open Chapter button on the
+// overview's right page. Back/Next (below) only
 // ever step between `subItems` entries that have a `Panel`/`LeftPanel`,
 // never a checklist row directly — so two rows sharing one `pageIndex`
 // never turns into two identical steps when paging with Next.
@@ -32,8 +32,7 @@ const NAV_BUTTON =
 // than turning a page), pinned
 // at the same bottom position as on paging pages (both states share the
 // fixed `minmax` row height), stepping into the first pageable sub-item —
-// except chapters flagged `hideOverviewNext` (Contact, whose checklist
-// is mostly action links).
+// except chapters with an `overviewRightPanel` (Contact).
 //
 // Paging (pageIndex is a sub-item index): left page is the current
 // sub-item's own content (`LeftPanel` if the entry defines a two-page
@@ -42,8 +41,7 @@ const NAV_BUTTON =
 // paired with its description (right), not a dimmed preview of the
 // *next* sub-item (that layout was removed per user request) — or
 // otherwise holds only the Next control — unless the sub-item sets
-// `hideNext: true` (Contact's "Send a Message"), which drops it
-// entirely. The left page always sits
+// `hideNext: true`, which drops it entirely. The left page always sits
 // below a `Chapter N / label` heading; if `LeftPanel`'s own content
 // already shows that label internally (so showing it twice would be
 // redundant), the entry can set `hideLeftLabel: true` — the heading
@@ -79,10 +77,10 @@ const BookPage = () => {
 
   if (!chapter) return null;
 
-  const { subItems } = chapter;
+  const { subItems, overviewRightPanel: OverviewRightPanel } = chapter;
   const checklistItems =
     chapter.checklist ||
-    subItems.map((item, i) => ({ label: item.label, pageIndex: i, href: item.href }));
+    subItems.map((item, i) => ({ label: item.label, pageIndex: i }));
 
   // Only entries with a `Panel`/`LeftPanel` are real pages — `href`
   // entries are skipped so Back/Next never lands on one.
@@ -199,6 +197,9 @@ const BookPage = () => {
                 </span>
                 <h3 className="font-cormorant text-2xl text-archive-text">{chapter.title}</h3>
               </div>
+              {OverviewRightPanel ? (
+                <OverviewRightPanel />
+              ) : (
               <ul className="flex flex-col gap-3">
                 {checklistItems.map((item, i) => {
                   const rowClass =
@@ -219,29 +220,19 @@ const BookPage = () => {
                   );
                   return (
                     <li key={`${item.label}-${i}`}>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          target={item.href.startsWith("mailto:") ? undefined : "_blank"}
-                          rel="noreferrer"
-                          className={rowClass}
-                        >
-                          {rowContent}
-                        </a>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => setPageIndex(item.pageIndex)}
-                          className={rowClass}
-                        >
-                          {rowContent}
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        onClick={() => setPageIndex(item.pageIndex)}
+                        className={rowClass}
+                      >
+                        {rowContent}
+                      </button>
                     </li>
                   );
                 })}
               </ul>
-              {!chapter.hideOverviewNext && renderNextButton("Open Chapter", { showArrow: false })}
+              )}
+              {!OverviewRightPanel && renderNextButton("Open Chapter", { showArrow: false })}
             </div>
           ) : (
             <div className="relative flex flex-col gap-5 h-full">

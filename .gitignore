@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+# Agent instructions (context lives in the shared vault)
+CLAUDE.md
+.github/copilot-instructions.md

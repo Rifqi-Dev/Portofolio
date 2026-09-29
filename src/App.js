@@ -90,7 +90,7 @@ function App() {
       >
         {intro !== "playing" && intro !== "loading" && (
           <BookProvider>
-            <main className="relative z-10 container mx-auto min-h-screen flex flex-col items-center justify-center px-0 py-0 md:px-16 md:py-10 [@media(max-height:500px)]:py-2">
+            <main className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-0 py-0 md:px-16 md:py-10 [@media(max-height:500px)]:py-2">
               <Book />
             </main>
           </BookProvider>
