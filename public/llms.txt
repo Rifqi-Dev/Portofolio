@@ -1,0 +1,31 @@
+# Rifqi Firlian Pratama
+
+> Software Engineer and AI Engineer. Personal portfolio at https://www.kapuyuaxdev.my.id/ (a single-page app; this file is a plain-text summary of its content).
+
+## About
+
+Rifqi Firlian Pratama is a Software Engineer and AI Engineer with strong skills in programming and problem solving. He builds computer vision pipelines, REST APIs and full stack web applications.
+
+## Skills
+
+- Languages and frameworks: JavaScript, TypeScript, React, Angular, Node.js, Express.js, Python, Bun, CSS3, Tailwind CSS
+- AI and media: OpenCV, Computer Vision, FFmpeg
+- Data and infrastructure: PostgreSQL, MongoDB, Docker, REST APIs
+- Workflow and tools: Git, JIRA, VS Code, Linux, Postman, Anaconda, LabelMe, CVAT
+
+## Experience
+
+- AI Engineer, PT. Inovasi Teknologi Olahraga (August 2025 to present, contract, remote): computer vision pipelines for sports image and video analysis (Python, OpenCV); RESTful APIs for AI inference; media and streaming services with FFmpeg.
+- AI Engineer, PT. Tjakrabirawa Teknologi Indonesia (October 2024 to August 2025, contract, remote): computer vision workflows for sports analytics on annotated datasets; RESTful APIs serving inference results; reproducible Python environments with Anaconda.
+- Full Stack Developer, PT. Ondel Teknologi Indonesia (August 2023 to May 2025, contract, Jakarta Utara): responsive web interfaces and RESTful APIs (Angular, TypeScript, Express.js, Node.js, PostgreSQL); authentication and authorization; third-party API integration; Agile/Scrum.
+
+## Projects
+
+- [FLOW, Personal Finance Tracker](http://flow.kapuyuaxdev.my.id/): offline-first PWA for tracking expenses, income, loans, budgets, savings and pockets, with optional Google-authenticated cloud sync across devices. Stack: React 19, Vite, TypeScript, Zustand, Dexie (IndexedDB), Recharts, Node.js, Express, Prisma, PostgreSQL, Docker.
+
+## Contact
+
+- Email: firlianrifqi22@gmail.com
+- LinkedIn: https://www.linkedin.com/in/rifqi-firlian/
+- GitHub: https://github.com/rifqi-dev
+- Instagram: https://instagram.com/rifqi.firlian

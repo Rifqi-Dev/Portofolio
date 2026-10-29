@@ -1,0 +1,46 @@
+{
+  "agent": "pm",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Task|Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"G:/My Drive/kapuyuax-vault/office/template/hook-relay.mjs\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"G:/My Drive/kapuyuax-vault/office/template/hook-relay.mjs\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"G:/My Drive/kapuyuax-vault/office/template/hook-relay.mjs\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"G:/My Drive/kapuyuax-vault/office/template/hook-relay.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}
