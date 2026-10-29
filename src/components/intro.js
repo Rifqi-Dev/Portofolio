@@ -28,9 +28,8 @@ function Intro() {
             >
               <img
                 className="mb-[-10px] lg:w-64 w-52"
-                src="https://storage.kapuyuaxdev.my.id/personal-website/avatar.png"
+                src={`${process.env.PUBLIC_URL}/avatar.webp`}
                 alt="avatar"
-                loading="lazy"
               />
             </div>
           </div>

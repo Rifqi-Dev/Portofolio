@@ -1,5 +1,5 @@
 import React from "react";
-import underConstruction from "../../resources/underConstruction.gif";
+import underConstruction from "../../resources/underConstruction.webp";
 
 function Education() {
   return (

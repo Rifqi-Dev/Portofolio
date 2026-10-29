@@ -5,10 +5,12 @@ import { BookProvider } from "./components/book/BookContext";
 import StarField from "./components/StarField";
 import BookIntro, { DISSOLVE_MS } from "./components/book/BookIntro";
 import { LANDSCAPE_SHORT_QUERY } from "./components/book/useIsLandscapeShort";
-import spaceBackground from "./components/book/assets/space-background.png";
 import Loading from "./components/Loading/Loading";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Served from public/ (not hashed) so index.html can preload it for LCP.
+const spaceBackground = `${process.env.PUBLIC_URL}/space-background.webp`;
 
 // Portrait phones get the loading bar instead of the intro video. Sideways
 // phones show the book (scaled to fit), so they play the video too.

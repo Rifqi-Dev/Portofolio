@@ -1,8 +1,8 @@
 import React from "react";
-import bookPageBg from "./assets/book-page-bg.png";
+import bookPageBg from "./assets/book-page-bg.webp";
 
 // Shell around the book's content area. The ornate frame is the
-// background artwork itself (book-page-bg.png, kept at its native 3:2
+// background artwork itself (book-page-bg.webp, kept at its native 3:2
 // aspect ratio so its own border/corner art isn't stretched or cropped)
 // — no extra CSS border/corner overlays on top of it. Grows with its
 // content below that image (page-level scroll), rather than clipping to

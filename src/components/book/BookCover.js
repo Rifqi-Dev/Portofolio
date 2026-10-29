@@ -50,9 +50,8 @@ const BookCover = () => {
             <div className="rounded-full overflow-hidden bg-space-blue w-28 h-28 lg:w-36 lg:h-36">
               <img
                 className="w-full h-full object-cover object-top"
-                src="https://storage.kapuyuaxdev.my.id/personal-website/avatar.png"
+                src={`${process.env.PUBLIC_URL}/avatar-288.webp`}
                 alt="Rifqi Firlian Pratama"
-                loading="lazy"
               />
             </div>
           </div>
